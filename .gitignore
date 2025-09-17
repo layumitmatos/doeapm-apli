@@ -7,18 +7,34 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Node
+node_modules/
 *.local
 
-# Editor directories and files
+# Build outputs
+dist/
+dist-ssr/
+build/
+
+# Capacitor native platforms (recriados)
+android/
+ios/
+
+# Expo / React Native
+.expo/
+.expo-shared/
+.expo-env.json
+
+# Editor/IDE
 .vscode/*
 !.vscode/extensions.json
-.idea
+.idea/
 .DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# System files
+Thumbs.db

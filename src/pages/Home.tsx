@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight, Users } from "lucide-react";
-import schoolHero from "@/assets/school-hero.jpg";
-import schoolCourtyard from "@/assets/school-courtyard.jpg";
-import schoolClassroom from "@/assets/school-classroom.jpg";
+import logoImage from "@/assets/logo.png";
+import schoolHero from "@/assets/sala1.jpeg";
+import schoolCourtyard from "@/assets/sala2.jpeg";
+import schoolClassroom from "@/assets/sala3.jpeg";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -37,13 +37,11 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="bg-primary text-primary-foreground p-4">
-        <div className="text-center">
-          <div className="bg-primary-light text-primary-light-foreground p-2 rounded-lg inline-block mb-2">
-            <span className="text-sm font-bold">DOE APM</span>
-          </div>
+      <header className="bg-primary shadow-sm py-4 px-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-center">
+          <img src={logoImage} alt="DOE APM Logo" className=" h-13 w-auto" />
         </div>
-      </div>
+      </header>
 
       {/* Hero Section with Slideshow */}
       <div className="bg-secondary p-6">
@@ -59,11 +57,12 @@ const Home = () => {
 
           {/* Slideshow */}
           <div className="relative bg-white rounded-lg overflow-hidden shadow-lg">
-            <div className="relative h-48 sm:h-64">
+            <div className="relative h-60 sm:h-64">
               <img
                 src={slideImages[currentSlide]}
                 alt="Imagem escolar"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover "
+                style={{ objectPosition: '50% 50%' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               
@@ -94,16 +93,6 @@ const Home = () => {
                 ))}
               </div>
             </div>
-
-            {/* Member badge */}
-            {userData && !userData.anonymous && (
-              <div className="p-4">
-                <Button variant="light" size="sm" className="flex items-center gap-2">
-                  <Users className="w-4 h-4" />
-                  Sou membro da APM
-                </Button>
-              </div>
-            )}
           </div>
         </div>
       </div>
@@ -147,9 +136,12 @@ const Home = () => {
                   <span className="text-2xl">📱</span>
                 </div>
                 <h3 className="font-semibold mb-2">O que você encontra no app</h3>
-                <p className="text-sm text-muted-foreground">
-                  • Acompanhe suas doações pessoais • Visualize o histórico completo de arrecadações • Veja como os recursos são utilizados • Mantenha-se informado sobre nossas atividades
-                </p>
+                <ul className="list-disc list-inside text-left text-sm text-muted-foreground">
+                 <li>Acompanhe suas doações pessoais</li>
+    <li>Visualize o histórico completo de arrecadações</li>
+    <li>Veja como os recursos são utilizados</li>
+    <li>Mantenha-se informado sobre nossas atividades</li>
+                </ul>
               </CardContent>
             </Card>
           </div>

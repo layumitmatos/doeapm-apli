@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import schoolHero from "@/assets/school-hero.jpg";
+import logoImage from "@/assets/logo.png";
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -39,8 +39,8 @@ const Login = () => {
         {/* Left side - Form */}
         <Card className="w-full">
           <CardHeader className="text-center space-y-4">
-            <div className="mx-auto bg-primary text-primary-foreground p-3 rounded-lg w-fit">
-              <span className="text-lg font-bold">DOE APM</span>
+            <div className="">
+             <img src={logoImage} alt="DOE APM Logo" className="h-16 w-auto mx-auto  " />
             </div>
             <CardTitle className="text-2xl">Bem-vindo à APM</CardTitle>
             <CardDescription>
@@ -108,14 +108,7 @@ const Login = () => {
           </CardContent>
         </Card>
 
-        {/* Right side - Illustration */}
-        <div className="hidden lg:flex items-center justify-center">
-          <img 
-            src={schoolHero} 
-            alt="Ilustração escolar"
-            className="w-full h-auto max-w-lg rounded-lg"
-          />
-        </div>
+       
       </div>
     </div>
   );
